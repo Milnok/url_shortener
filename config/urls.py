@@ -17,8 +17,10 @@ from django.contrib import admin
 from django.urls import path
 
 from url_shortener.views import IndexView
+from api.views import CreateAPI
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', IndexView.as_view())
+    path('', IndexView.as_view()),
+    path('api/v1/create_url/', CreateAPI.as_view())
 ]
