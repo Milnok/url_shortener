@@ -10,6 +10,9 @@ class Url(models.Model):
     short_url = models.SlugField(max_length=10, db_index=True, verbose_name="Короткий url")
     last_redirect = models.DateField(null=True, verbose_name="Дата последнего перехода по ссылке")
 
+    def __str__(self):
+        return self.full_url
+
     def generate_short_url(self):
         flag = True
         while flag:
