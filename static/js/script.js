@@ -7,13 +7,10 @@ function send_request() {
             csrfmiddlewaretoken: document.getElementsByName('csrfmiddlewaretoken')[0].value
         },
         success: function (response) {
-            document.getElementById("short_url_link").href = document.location.origin + '/' + response['short_url']
-            document.getElementById("short_url").innerHTML = document.location.origin + '/' + response['short_url']
+            document.getElementById("short_url").value = document.location.origin + '/' + response['short_url']
         },
         error: function (response) {
-            console.log(response['responseJSON']['full_url']);
-            document.getElementById("short_url_link").removeAttribute('href')
-            document.getElementById("short_url").innerHTML = response['responseJSON']['full_url']
+            document.getElementById("short_url").value = response['responseJSON']['full_url']
         },
     });
 }
