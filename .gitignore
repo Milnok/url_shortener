@@ -3,3 +3,6 @@ venv
 api/migrations
 url_shortener/migrations
 db.sqlite3
+celerybeat-schedule.bak
+celerybeat-schedule.dat
+celerybeat-schedule.dir
